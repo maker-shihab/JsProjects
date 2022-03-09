@@ -33,9 +33,10 @@ function creatMeal(meal){
           `<li>${ingredient}</li>`
           ).join(' ')}
       </ul>
-
-
       <p class='meal-pragrap py-4'>${meal.strInstructions}</p>
+      <iframe width="420" height="315"
+      src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}">
+      </iframe>
     </div>
   </div>
   `;

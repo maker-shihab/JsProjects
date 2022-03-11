@@ -21,4 +21,4 @@ setInterval(() => {
     console.log(imgUrl);
   }
   
-},2000)
+},2000);

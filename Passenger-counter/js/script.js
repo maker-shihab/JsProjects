@@ -5,4 +5,8 @@ let countValue = 0;
 btnIncrease.addEventListener('click', () => {
   countValue++;
   count.innerText = countValue;
-})
+});
+btnDecrise.addEventListener('click', () => {
+  countValue--;
+  count.innerText = countValue;
+});

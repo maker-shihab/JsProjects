@@ -5,16 +5,20 @@ const loadCountrys = () => {
 }
 
 const displayCountrys = countrys =>{
+  console.log(countrys);
   const countryHtml = countrys.map(country => getCountryHtml(country));
   const showCountrys = document.getElementById('countris');
   showCountrys.innerHTML = countryHtml.join(' ');
 }
 
-const getCountryHtml = country => {
+const getCountryHtml = ({name, flags, capital}) => {
   return `
   <div class="country">
-    <h2 class="county-title">${country.name}</h2>
-    <img src="${country.flags.png}" alt="country-falg" class="country-falg">
+    <div class='flex'>
+      <h2 class="county-title">${name}</h2>
+      <h3 class="county-title">${capital}</h3>
+    </div>
+    <img src="${flags.png}" alt="country-falg" class="country-falg">
   </div>
   `
 }

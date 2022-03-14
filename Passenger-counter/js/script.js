@@ -7,6 +7,10 @@ btnIncrease.addEventListener('click', () => {
   count.innerText = countValue;
 });
 btnDecrise.addEventListener('click', () => {
-  countValue--;
-  count.innerText = countValue;
+  if(countValue <= 0){
+    countValue.innerText = 'Add Number no negative number';
+  }else{
+    countValue--;
+    count.innerText = countValue;
+  }
 });

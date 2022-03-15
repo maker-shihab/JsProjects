@@ -1,12 +1,5 @@
-const count = document.getElementById('count');
-const btnIncrease = document.getElementById('incrise');
-const btnDecrise = document.getElementById('decrise');
-let countValue = 0;
-  btnIncrease.addEventListener('click', () => {
-    countValue++;
-    count.innerText = countValue;
-  });
-  btnDecrise.addEventListener('click', () => {
-    countValue--;
-    count.innerText = countValue;
-  });
+const months = document.getElementById('months');
+const days = document.getElementById('days');
+const hours = document.getElementById('hours');
+const minutes = document.getElementById('minutes');
+const seconds = document.getElementById('seconds');

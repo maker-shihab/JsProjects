@@ -1,21 +1,35 @@
-const mian = document.getElementById('main');
-const search = document.getElementById('search');
-const form = document.getElementById('form');
-
 const APIURL = "https://api.github.com/users/";
-const getUser = (user) => {
-  fetch(APIURL + user)
-  .then(res=> res.json())
-  .then(data => createUserCard(data));
+
+const main = document.getElementById("main");
+const form = document.getElementById("form");
+const search = document.getElementById("search");
+
+getUser("florinpop17");
+
+async function getUser(username) {
+    const resp = await fetch(APIURL + username);
+    const respData = await resp.json();
+
+    createUserCard(respData);
+
+    getRepos(username);
 }
-function createUserCard(user){
-  const createHtml = `
-   <div class="card">
-      <div>
-        <img src="${user.avatar_url}" alt="${user.name}">
-      </div>
-   </div>
-  `;
-  main.innerHTML = createHtml;
+
+async function getRepos(username) {
+    const resp = await fetch(APIURL + username + "/repos");
+    const respData = await resp.json();
+
+    addReposToCard(respData);
 }
-search.addEventListener('submit', submitData())
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const user = search.value;
+
+    if (user) {
+        getUser(user);
+
+        search.value = "";
+    }
+});

@@ -18,3 +18,4 @@ function createUserCard(user){
   `;
   main.innerHTML = createHtml;
 }
+search.addEventListener('submit', submitData())

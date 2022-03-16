@@ -1,7 +1,20 @@
-const getApi = 'https://api.github.com/repositories/215335/issues/132';
-const showData = () => {
-  fetch(getApi)
+const mian = document.getElementById('main');
+const search = document.getElementById('search');
+const form = document.getElementById('form');
+
+const APIURL = "https://api.github.com/users/";
+const getUser = (user) => {
+  fetch(APIURL + user)
   .then(res=> res.json())
-  .then(data => console.log(data));
+  .then(data => createUserCard(data));
 }
-showData();
+function createUserCard(user){
+  const createHtml = `
+   <div class="card">
+      <div>
+        <img src="${user.avatar_url}" alt="${user.name}">
+      </div>
+   </div>
+  `;
+  main.innerHTML = createHtml;
+}
